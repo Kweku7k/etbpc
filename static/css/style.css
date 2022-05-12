@@ -1,0 +1,191 @@
+html{
+    font-family: 'Poppins', sans-serif;
+}
+
+h4,h6{
+    margin: 0;
+}
+
+.body{
+    font-family: 'Poppins', sans-serif;
+}
+
+.primaryButton{
+    background-color: blue;
+    padding: 20px 38px;
+    color: white;
+    border: none;
+    font-weight: bold;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.imageGalleryClass{
+    border-radius: 20px;
+    margin : 10px;
+    box-shadow: 0 4px 10px 0 rgba(43, 43, 43, 0.04);
+
+}
+
+.secondaryButton{
+    background-color: transparent;
+    padding: 16px 24px;
+    color: black;
+    border: 1px solid #f0ece8;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px 0 rgba(43, 43, 43, 0.04);
+}
+
+img{
+    box-shadow: 0 4px 10px 0 rgba(43, 43, 43, 0.04);
+}
+
+.resultCard{
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.secondarySection{
+    background-color: rgba(0, 0, 255, 0.067); 
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.primarySection{
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+footer{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color: blue;
+    color: white;
+}
+
+.iconBg{
+    background-color: rgba(0, 0, 255, 0.377);
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    justify-content: center;
+}
+
+.heading{
+    font-size: 65px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    line-height: 1.333em;
+}
+
+.small-header{
+    color: blue;
+    font-weight: bold;
+
+}
+.header-line{
+    width: 30%; 
+    text-align: left; 
+    margin-top: 30vh;
+    margin-left: 0; 
+    line-height: 1.583em;
+    background-color: rgba(0, 0, 255, 0.559); 
+    border: 5px solid  rgba(0, 0, 255, 0.559); 
+    border-radius: 20px;
+}
+.header-line-middle{
+    width: 20%; 
+    text-align: center; 
+    /* margin-top: 30vh; */
+    line-height: 1.583em;
+    background-color: rgba(0, 0, 255, 0.559); 
+    border: 5px solid  rgba(0, 0, 255, 0.559); 
+    border-radius: 20px;
+}
+
+.support-text{
+    font-family: 'Poppins', sans-serif;
+    font-weight: lighter;
+    font-size: 20px;
+    margin: 20px auto;
+    color: rgba(0, 0, 0, 0.614);
+
+}
+
+section{
+    margin-bottom: 30px;
+}
+
+.card{
+    padding: 80px 40px;
+    border-radius: 16px !important;
+    text-align: center;
+    box-shadow: 0 4px 10px 0 rgba(43, 43, 43, 0.04);
+    margin: 100px auto;
+    background-color: rgba(0, 0, 255, 0.015) !important;
+}
+
+.buttonRow{
+    display: flex;
+}
+.buttonRow-middle{
+    display: flex;
+    margin: auto;
+    width: fit-content;
+    /* justify-content: space-around; */
+    /* justify-content: space-around; */
+}
+
+.support{
+    font-family: 'Poppins', sans-serif;
+    font-weight: lighter;
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.614);
+}
+
+.donate-support{
+    font-family: 'Poppins', sans-serif;
+    font-weight: lighter;
+    font-size: 14px;
+    text-align: center;
+    margin: 5px auto;
+    margin-bottom: 10px;
+    color: rgba(0, 0, 0, 0.614);
+}
+
+.donate-button{
+    background-color: blue;
+    padding: 10px 38px;
+    color: white;
+    border: none;
+    font-weight: bold;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.support-row-span{
+    color: blue;
+}
+
+.support-row-header{
+    font-family:'Poppins';
+    font-weight: bolder;
+    margin-bottom: 0;
+}
+
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .maincard{
+      width: 100%;
+      margin: 0;
+    }
+
+    section{
+        margin: 0;
+        padding: 0;
+    }
+  }
