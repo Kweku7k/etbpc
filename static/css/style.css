@@ -1,5 +1,6 @@
 html{
     font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
 }
 
 h4,h6{
@@ -40,6 +41,10 @@ img{
     box-shadow: 0 4px 10px 0 rgba(43, 43, 43, 0.04);
 }
 
+.imgHolder{
+    margin: 20px auto;
+}
+
 .resultCard{
     display: flex;
     margin-bottom: 30px;
@@ -69,13 +74,20 @@ footer{
     width: 70px;
     height: 70px;
     display: flex;
+    color: white;
     align-items: center;
     margin-right: 10px;
     justify-content: center;
 }
 
+.dataCard{  
+    text-align: center;
+    margin: 20px auto;
+}
+
+
 .heading{
-    font-size: 65px;
+    font-size: 45px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bolder;
     line-height: 1.333em;

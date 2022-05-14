@@ -20,11 +20,11 @@
     <title>EBPTC</title>
   </head>
   <body class="body">
-    <nav class="border-bottom navbar navbar-expand-lg navbar-light bg-white" >
+    <nav class="border-bottom navbar navbar-expand-lg navbar-light navbar-fixed-top bg-white" >
         <a class="navbar-brand" href="#">
             <h6 class="header" style="margin: 0; font-weight: bold; ">
             <!-- <i class="fa fa-heart-o" aria-hidden="true"></i> -->
-              EndTime Bible Project For Christ</a>
+              ETBPC</a>
       </h6>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -33,8 +33,17 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav py-3 mr-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact Us <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="#whatWeDo">What we do <span class="sr-only">(current)</span></a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About Us <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#gallery">Gallery <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact Us <span class="sr-only">(current)</span></a>
+        </li>
           <!-- <li class="nav-item">
             <a class="nav-link" href="#">About</a>
           </li>
@@ -50,7 +59,9 @@
             </div>
           </li> -->
         </ul>
-          <button class="primaryButton" type="submit">Donate now</button>
+        <a href="{{url_for("donate")}}">
+            <button class="primaryButton" type="submit">Donate now</button>
+        </a>
       </div>
     </nav>
     <!-- {% block body %} -->
@@ -58,19 +69,21 @@
     <section>
         <div class="container">
             <div class="row">
-                <div class="col">
-                    <hr class="header-line">
-                    <h1 data-aos="fade-in" data-aos-easing="ease-in" data-aos-duration="500" class="heading" style="font-family: 'Poppins', sans-serif;">Giving help to those who need it</h1>
+                <div class="col-md-6">
+                    <hr class="header-line" >
+                    <h3 data-aos="fade-in" data-aos-easing="ease-in" data-aos-duration="500" class="heading" style="font-family: 'Poppins', sans-serif;">Endtime Bible Project For Christ</h3>
                     <h6 data-aos="fade-in" data-aos-easing="ease-in" data-aos-duration="700" data-aos-delay="200" class="support-text">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem recusandae nam rerum assumenda in maiores ut unde.
+                        Reaching the Outermost with His Word.
                     </h6>
                     <div class="buttonRow">
                         <button data-aos="fade-up" data-aos-easing="ease-in" data-aos-duration="500" class="primaryButton">Donate Now</button>
-                        <button data-aos="fade-up" data-aos-easing="ease-in" data-aos-duration="500" data-aos-delay="50" class="secondaryButton">About our charity</button>
+                        <a href="#about">
+                            <button data-aos="fade-up" data-aos-easing="ease-in" data-aos-duration="500" data-aos-delay="50" class="secondaryButton">About our charity</button>
+                        </a>
                     </div>
 
                 </div>
-                <div class="col">
+                <div class="col-md-6">
                     <img data-aos="fade-zoom-in" data-aos-easing="ease-in" data-aos-duration="500" src="../static/img/school.jpeg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" style="height: 100%; object-fit: cover; border-radius: 10px; margin-top: 10px;" alt="">
                 </div>
             </div>
@@ -80,19 +93,19 @@
     <section style="margin-top: 100px; padding-bottom: 100px;">
         <div class="container">
             <div class="row">
-                <div class="col-md-3" data-aos="fade-up" data-aos-easing="ease-in" data-aos-duration="500">
+                <div class="col-md-3 dataCard" data-aos="fade-up" data-aos-easing="ease-in" data-aos-duration="500">
                     <h1 class="support-row-header">200<span class="support-row-span">m</span></h1>
                     <h6 class="support">Humans impacted</h6>
                 </div>
-                <div class="col-md-3" data-aos="fade-up" data-aos-easing="ease-in" data-aos-duration="500" data-aos-delay="100">
+                <div class="col-md-3 dataCard" data-aos="fade-up" data-aos-easing="ease-in" data-aos-duration="500" data-aos-delay="100">
                     <h1 class="support-row-header">50<span class="support-row-span">k</span></h1>
                     <h6 class="support">Collaborators</h6>
                 </div>
-                <div class="col-md-3" data-aos="fade-up" data-aos-easing="ease-in" data-aos-duration="500" data-aos-delay="200">
+                <div class="col-md-3 dataCard" data-aos="fade-up" data-aos-easing="ease-in" data-aos-duration="500" data-aos-delay="200">
                     <h1 class="support-row-header">370<span class="support-row-span">k</span></h1>
                     <h6 class="support">Donations</h6>
                 </div>
-                <div class="col-md-3" data-aos="fade-up" data-aos-easing="ease-in" data-aos-duration="500" data-aos-delay="300">
+                <div class="col-md-3 dataCard" data-aos="fade-up" data-aos-easing="ease-in" data-aos-duration="500" data-aos-delay="300">
                     <h1 class="support-row-header">100<span class="support-row-span">+</span></h1>
                     <h6 class="support">Assisted communities</h6>
                 </div>
@@ -107,20 +120,62 @@
             <div class="row">
                 <div class="col">
                     <h6 class="small-header">Bible quote for the day.</h6>
-                    <h1 class="header" style="font-weight: bold;">James 1:34</h1>
-                    <h6>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere iste accusamus doloribus eligendi ratione reiciendis vel eaque eum rerum doloremque eius officiis dolorem, unde laudantium perferendis ea vero consectetur quia?
+                    <h1 class="header" style="font-weight: bold;">James 1:1</h1>
+                    <h6 >
+                        This letter is from James, a slave of God and of the Lord Jesus Christ.
+I am writing to the “twelve tribes”—Jewish believers scattered abroad.
+Greetings!
                     </h6>
                     <br/>
-                    <button class="primaryButton">Read More</button>
+                    <a href="https://www.bible.com/bible/116/JAS.1.NLT">
+                        <button class="primaryButton">Read More</button>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="secondarySection" style="background-color: white;">
+    <section class="primarySection">
+
+        <div id="whatWeDo" class="container">
+        <!-- <h4 class="small-header">PLEASE HELP SAVE THE BIBLE FROM GOING INTO EXTINCTION.</h4> -->
+        <h4 style="text-align:center;" class="small-header">Please help save the bible from going into extinction.</h4>
+        <br/>
+        <br/>
+        <p>Do you know that the holy Bible may not be seen anywhere in the next 50years if nothing is done to save it.    
+            Do you know that Satan is using new technology to remove the holy Bible from the bookshops, bookshelves and churches and Christians and men of God are helping him achieve that without their knowing?    
+            <br/>
+            <br/>
+            When ministers of God preach from their laptops, iPads and phones instead of from the Bible they are inadvertently encouraging their members to come to the Church services with their phones instead of  their Bibles.  
+            <br/>
+            <br/>
+            Have you ever wondered what will happen to an Imam who preaches in the mosque from the laptop instead of from the Koran?   
+            Have you ever wondered what will happen to a Moslem in the mosque fiddling with his phone looking for Koranic verses while the Imam is preaching?  
+            Yet we have highly educated people amongst them who could take advantage of the new technology.   
+            <br/>
+            <br/>
+            While other religious groups are working hard to preserve their religious books Christians are working hard to remove the holy Bible from hard copy to soft copy for their convenience.     
+            If Christians continue with this attitude less Bibles will be sold and gradually the publishers will stop Bible production.     
+            <br/>
+            <br/>
+            Technology has resulted in phasing out a lot of things today. Where is black and white TV? Battery powered torches are gradually being phased out because of rechargeable torches.    
+            Please don't allow the holy Bible to suffer the same fate. There are still books in heaven (Rev 20:12).  
+            <br/>
+            <br/>
+            Let us go to our church services and fellowships with our Bibles. If preaching from the holy Bible is archaic and burdensome let us continue to preach from it for the sake of Christ and for the preservation of the holy Bible.
+            If going to  church services with the Bible is a burden, remember Jesus carried a bigger burden for you.                             
+            You can use your iPads and phones for your private/personal Bible study for your convenience but please save the holy Bible from going into extinction by going with it to church services and fellowships and God will bless you.               
+            <br/>
+            <br/>
+            If you are blessed by this write up please send it to all the Christians and Men of God you know and God will bless you.                    
+            </p>
+        </div>
+
+    </section>
+
+    <section id="about" class="secondarySection" style="background-color: white;">
         <div class="container">
-            <div class="row" >
+            <div class="row" style="margin-bottom:50px;" >
                 <div class="col">
                     <h6 style="color: blue;" data-aos="fade-in" data-aos-easing="ease-in" data-aos-duration="500"><b>ABOUT US</b></h6>
                     <h1 data-aos="fade-in" data-aos-easing="ease-in" data-aos-duration="500" data-aos-delay="100" class="support-row-header">We are here to support vulnerable communities</h1>
@@ -133,7 +188,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div id="gallery" class="row">
                 <div class="col-md-6">
                     <p data-aos="fade-in" data-aos-easing="ease-in" data-aos-duration="500" data-aos-delay="100" class="support">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere assumenda tenetur laboriosam quisquam officia cumque ullam illo laudantium neque debitis, odit perferendis optio ex, sed hic. Recusandae et dolores amet?</p>
                     <img data-aos="fade-up" data-aos-easing="ease-in" data-aos-duration="500" data-aos-delay="100" src="../static/img/gal1.jpeg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|} imageGalleryClass" alt="">
@@ -167,13 +222,14 @@
                     </h2>
                     <div class="row" style="margin: 40px 0;">
                         <div class="col-md-6">
-                            <div class="resultCard">
+                            <div class="resultCard" style="padding: auto;">
                                 <div class="iconBg">
-                                    <i class="fa fa-heart-o" aria-hidden="true"></i>
+                                    <i class="fa fa-building fa-2x" aria-hidden="true"></i>
+                                    <!-- <i class="fas fa-school"></i> -->
                                 </div>
                                 <div>
-                                    <h4 class="support-row-header">500m</h4>
-                                    <h6 class="support">Litres of water</h6>
+                                    <h4 class="support-row-header">50</h4>
+                                    <h6 class="support">Schools Visited</h6>
                                 </div> 
                             </div>
                         </div>
@@ -182,7 +238,8 @@
                         <div class="col-md-6">
                             <div class="resultCard">
                                 <div class="iconBg">
-                                    <i class="fa fa-heart-o" aria-hidden="true"></i>
+                                    <i class="fas fa-bible fa-2x"></i>
+                                    <!-- <i class="fa fa-heart-o" aria-hidden="true"></i> -->
                                 </div>
                                 <div>
                                     <h4 class="support-row-header">7000+</h4>
@@ -194,11 +251,12 @@
                         <div class="col-md-6">
                             <div class="resultCard">
                                 <div class="iconBg">
-                                    <i class="fa fa-heart-o" aria-hidden="true"></i>
+                                    <i class="fa fa-heart fa-2x" aria-hidden="true"></i>
+                                    <!-- <i class="fa fa-heart-o" aria-hiddens="true"></i> -->
                                 </div>
                                 <div>
                                     <h4 class="support-row-header">7000+</h4>
-                                    <h6 class="support">Bibles shared</h6>
+                                    <h6 class="support">Souls Reached</h6>
                                 </div> 
                             </div>
                         </div>
@@ -206,11 +264,12 @@
                         <div class="col-md-6">
                             <div class="resultCard">
                                 <div class="iconBg">
-                                    <i class="fa fa-heart-o" aria-hidden="true"></i>
+                                    <i class="fa fa-gift fa-2x" aria-hidden="true"></i>
+                                    <!-- <i class="fa fa-heart-o" aria-hidden="true"></i> -->
                                 </div>
                                 <div>
-                                    <h4 class="support-row-header">7000+</h4>
-                                    <h6 class="support">Bibles shared</h6>
+                                    <h4 class="support-row-header">900+</h4>
+                                    <h6 class="support">Donations</h6>
                                 </div> 
                             </div>
                         </div>
@@ -228,6 +287,8 @@
 
 
     <section class="secondarySection">
+        <div class="container">
+
         <div style="text-align: center;">
         <h6 class="small-header">TAKE A LOOK AT OUR TEAM</h6>
         <h4 style="font-weight: bold;">We have helped over 200 vulnerable communities worldwide</h4>
@@ -240,6 +301,8 @@
             </button>
         </div>
     </div>
+</div>
+
 
     <div class="container" >
         <div class="row" style="margin: 100px auto;"  >
@@ -255,6 +318,36 @@
                     <br/>
             </div>
             </div>
+
+            
+        <div class="row" style="margin: 100px auto;"  >
+            <div class="col-md-6">
+                <h6 style="color: blue;" data-aos="fade-in" data-aos-easing="ease-in" data-aos-duration="500"><b>VICE PRESIDENT / CORDINATOR</b></h6>
+                <h1 data-aos="fade-in" data-aos-easing="ease-in" data-aos-duration="500" data-aos-delay="100" class="support-row-header">Mr. Eric</h1>
+                <hr>
+                <p data-aos="fade-in" data-aos-easing="ease-in" data-aos-duration="500" data-aos-delay="100" class="support">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti placeat et vero rem, sapiente consequatur eius excepturi nesciunt exercitationem id repellendus minus quod dolor aperiam nobis alias, totam, magni earum!</p>
+                <br/>
+        </div>
+            <div class="col-md-6 imgHolder">
+                <img src="../static/img/gal1.jpeg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" style="object-fit: cover; border-radius: 10px; margin-top: 10px;" alt="">
+            </div> 
+            
+            </div>
+
+
+            <div class="row" style="margin: 100px auto;"  >
+                <div class="col-md-6">
+                    <img src="../static/img/gal1.jpeg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" style="object-fit: cover; border-radius: 10px; margin-top: 10px;" alt="">
+                </div> 
+                <div class="col-md-6">
+    
+                        <h6 style="color: blue;" data-aos="fade-in" data-aos-easing="ease-in" data-aos-duration="500"><b>CHIEF EDITOR</b></h6>
+                        <h1 data-aos="fade-in" data-aos-easing="ease-in" data-aos-duration="500" data-aos-delay="100" class="support-row-header">Rev. Frank</h1>
+                        <hr>
+                        <p data-aos="fade-in" data-aos-easing="ease-in" data-aos-duration="500" data-aos-delay="100" class="support">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti placeat et vero rem, sapiente consequatur eius excepturi nesciunt exercitationem id repellendus minus quod dolor aperiam nobis alias, totam, magni earum!</p>
+                        <br/>
+                </div>
+                </div>
         </div>
 
     </div>
@@ -264,12 +357,12 @@
 
     <div class="container">
         <div class="row">
-            <div class="col">
+            <div class="col-md-6">
                 <h4 class="support-row-header">Our Mision</h4>
                 <br/>
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam dolore, temporibus, ex nihil deleniti dolores, laborum eveniet eum veniam amet eius. Nulla quod aspernatur totam adipisci assumenda reiciendis quas dolore.</p>
             </div>
-            <div class="col">
+            <div class="col-md-6">
                 <h4 class="support-row-header">Our Vision</h4>
                 <br/>
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam dolore, temporibus, ex nihil deleniti dolores, laborum eveniet eum veniam amet eius. Nulla quod aspernatur totam adipisci assumenda reiciendis quas dolore.</p>
@@ -279,23 +372,34 @@
 </section>
 
 
-    <footer>
+    <footer id="contact">
         <div class="container">
             <div class="row">
-                <div class="col">
+                <div class="col-md-3">
                     <h5 class="small-header" style="color:white">EndTime Bible Project For Christ</h5>
                     <hr style="background-color: white;">
-                    <p>EBPTC tag line.</p>
+                    <p>Reaching the Outermost with His Word..</p>
                 </div>
-                <div class="col">
+                <div class="col-md-3">
+                    <h5 class="small-header" style="color:white">Useful Links</h5>
+
                     <ul>
-                        <li>One</li>
-                        <li>One</li>
-                        <li>One</li>
-                        <li>One</li>
+                        <li>
+                            <a href="#whatWeDo" style="color: white;">What we do <span class="sr-only">(current)</span></a>
+                          </li>
+                          <li>
+                            <a style="color: white;" href="#about">About Us <span class="sr-only">(current)</span></a>
+                          </li>
+                          <li>
+                            <a style="color: white;" href="#gallery">Gallery <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li>
+                            <a style="color: white;" href="#contact">Contact Us <span class="sr-only">(current)</span></a>
+                        </li>
                     </ul>
                 </div>
-                <div class="col">
+                <div class="col-md-3">
+                    <h5 class="small-header" style="color:white">Actions</h5>
                     <ul>
                         <li>One</li>
                         <li>One</li>
@@ -304,7 +408,7 @@
                     </ul>
                 </div>
 
-                <div class="col">
+                <div class="col-md-3">
                     Join Us.
                 </div>
             </div>
