@@ -18,6 +18,11 @@ def home():
 def donate():
     return render_template('donate.html')
 
+@app.route('/addscripture')
+def addscripture():
+    pass
+    return render_template('addscripture.html')
+
 if __name__ == '__main__':
     #DEBUG is SET to TRUE. CHANGE FOR PROD
     app.run(port=5000,debug=True)
