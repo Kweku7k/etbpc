@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- <link rel="stylesheet" href="{{url_for("static", filename="css/style.css")}}"> -->
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="https://kit.fontawesome.com/091f1122a7.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="{{ url_for('static',filename='img/favicon.png')}}" type="image/gif" sizes="16x16">
+    <!-- Bootstrap CSS -->
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/plus-jakarta-display.min.css">  -->
+<link rel="preconnect" href="https://fonts.googleapis.com">   
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>EBPTC</title>
+  </head>
+  <body class="body">
+
+    <nav class="border-bottom navbar navbar-expand-lg navbar-light navbar-fixed-top bg-white" >
+        <a class="navbar-brand" href="{{ url_for('home') }}">
+            <h6 class="header" style="margin: 0; font-weight: bold; ">
+            <!-- <i class="fa fa-heart-o" aria-hidden="true"></i> -->
+              ETBPC</a>
+      </h6>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav py-3 mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#whatWeDo">What we do <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About Us <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#gallery">Gallery <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact Us <span class="sr-only">(current)</span></a>
+        </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Pages
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li> -->
+        </ul>
+        <a href="https://paystack.com/pay/mv94id5n1y">
+            <button class="primaryButton" type="submit">Donate now</button>
+        </a>
+      </div>
+    </nav>
+
+    {%block body %}
+
+    {% endblock %}
+    <footer id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h5 class="small-header" style="color:white">EndTime Bible Project For Christ</h5>
+                    <hr style="background-color: white;">
+                    <p>Reaching the Outermost with His Word..</p>
+                </div>
+                <div class="col-md-3">
+                    <h5 class="small-header" style="color:white">Useful Links</h5>
+
+                    <ul>
+                        <li>
+                            <a href="#whatWeDo" style="color: white;">What we do <span class="sr-only">(current)</span></a>
+                          </li>
+                          <li>
+                            <a style="color: white;" href="#about">About Us <span class="sr-only">(current)</span></a>
+                          </li>
+                          <li>
+                            <a style="color: white;" href="#gallery">Gallery <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li>
+                            <a style="color: white;" href="#contact">Contact Us <span class="sr-only">(current)</span></a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-6">
+
+                    <h5 class="small-header" style="color:white">Contact Us</h5>
+                    <h6>PO Box CT 5845, Cantoments, Accra</h6>
+                    <a href="tel:+233244373784"><h6 style="color: white;">+233 24 4373 784</h6></a>
+                    <a href="tel:+233271642524"><h6 style="color: white;">+233 27 1642 524</h6></a>
+                    <a href="tel:00447983674260"><h6 style="color: white;">+00 44 7983 6742 60</h6></a>
+                
+
+
+
+
+                </div>
+            </div>
+        </div>
+       
+    </footer>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>
