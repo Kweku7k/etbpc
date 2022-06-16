@@ -12,7 +12,9 @@
                         Reaching the Outermost with His Word.
                     </h6>
                     <div class="buttonRow">
-                        <button data-aos="fade-up" data-aos-easing="ease-in" data-aos-duration="500" class="primaryButton">Donate Now</button>
+                        <a href="{{url_for("donate")}}">
+                            <button data-aos="fade-up" data-aos-easing="ease-in" data-aos-duration="500" class="primaryButton">Donate Now</button>
+                        </a>
                         <a href="{{url_for('statement')}}">
                             <button data-aos="fade-up" data-aos-easing="ease-in" data-aos-duration="500" data-aos-delay="50" class="secondaryButton">Our Values</button>
                         </a>
@@ -28,21 +30,23 @@
 
     <section style="margin-top: 100px; padding-bottom: 100px;">
         <div class="container">
+        <h2 class="small-heading" style="text-align: center; font-weight: bold; color: blue;">July 2021</h2>
+
             <div class="row">
                 <div class="col-md-3 dataCard" data-aos="fade-up" data-aos-easing="ease-in" data-aos-duration="500">
-                    <h1 class="support-row-header">200<span class="support-row-span">m</span></h1>
+                    <h1 class="support-row-header">{{update.field1}}<span class="support-row-span">m</span></h1>
                     <h6 class="support">Humans impacted</h6>
                 </div>
                 <div class="col-md-3 dataCard" data-aos="fade-up" data-aos-easing="ease-in" data-aos-duration="500" data-aos-delay="100">
-                    <h1 class="support-row-header">50<span class="support-row-span">k</span></h1>
+                    <h1 class="support-row-header">{{update.field2}}<span class="support-row-span">k</span></h1>
                     <h6 class="support">Collaborators</h6>
                 </div>
                 <div class="col-md-3 dataCard" data-aos="fade-up" data-aos-easing="ease-in" data-aos-duration="500" data-aos-delay="200">
-                    <h1 class="support-row-header">370<span class="support-row-span">k</span></h1>
+                    <h1 class="support-row-header">{{update.field3}}<span class="support-row-span">k</span></h1>
                     <h6 class="support">Donations</h6>
                 </div>
                 <div class="col-md-3 dataCard" data-aos="fade-up" data-aos-easing="ease-in" data-aos-duration="500" data-aos-delay="300">
-                    <h1 class="support-row-header">100<span class="support-row-span">+</span></h1>
+                    <h1 class="support-row-header">{{update.field4}}<span class="support-row-span">+</span></h1>
                     <h6 class="support">Assisted communities</h6>
                 </div>
                 
@@ -107,31 +111,38 @@
 
     </section>
 
-    <section id="about" class="secondarySection" style="background-color: white;">
+    <section id="about" class="secondarySection" >
         <div class="container">
-            <div class="row" style="margin-bottom:50px;" >
-                <div class="col-md-6">
+            <div class="row">
+
                     <h6 style="color: blue;" data-aos="fade-in" data-aos-easing="ease-in" data-aos-duration="500"><b>ABOUT US</b></h6>
+
+
+            </div>
+            <div class="row" style="margin-bottom:50px;" >
+
+
                     <h1 data-aos="fade-in" data-aos-easing="ease-in" data-aos-duration="500" data-aos-delay="100" class="support-row-header">We aim to bring back the bible and steer away from phones in the house of the Lord.</h1>
                     <br/>
-                </div>
-                <div class="col-md-6">
-                    <div class="buttonRow">
-                        <button class="primaryButton" data-aos="fade-up" data-aos-easing="ease-in" data-aos-duration="500">Donate Now</button>
-                        <button class="secondaryButton" data-aos="fade-up" data-aos-easing="ease-in" data-aos-duration="500" data-aos-delay="50" style="color: blue; background-color: white; border: 1px solid rgba(0, 0, 255, 0.425); ">About us</button>
-                    </div>
-                </div>
-                <p>
 
-                </p>
+                <p data-aos="fade-in" data-aos-easing="ease-in" data-aos-duration="500" data-aos-delay="100" class="support">                            
+                    You can use your iPads and phones for your private/personal Bible study for your convenience but please save the holy Bible from going into extinction by going with it to church services and fellowships and God will bless you. </p>
+
+                        <div class="buttonRow">
+                            <a href="{{url_for("about")}}">
+                                <button class="primaryButton" data-aos="fade-up" data-aos-easing="ease-in" data-aos-duration="500">Read More</button>
+                            </a>
+                            <!-- <button class="secondaryButton" data-aos="fade-up" data-aos-easing="ease-in" data-aos-duration="500" data-aos-delay="50" style="color: blue; background-color: white; border: 1px solid rgba(0, 0, 255, 0.425); "></button> -->
+                        </div>
+
+
             </div>
-            <div id="gallery" class="row">
+            <!-- <div id="gallery" class="row">
                 <div class="row">
                     <div class="container">
 
                         <p data-aos="fade-in" data-aos-easing="ease-in" data-aos-duration="500" data-aos-delay="100" class="support">                            
                             You can use your iPads and phones for your private/personal Bible study for your convenience but please save the holy Bible from going into extinction by going with it to church services and fellowships and God will bless you. </p>
-                            <!-- <img data-aos="fade-up" data-aos-easing="ease-in" data-aos-duration="500" data-aos-delay="100" src="../static/img/gal3.jpeg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|} imageGalleryClass" alt=""> -->
                         </div> 
                     </div>
                 
@@ -150,7 +161,7 @@
                 <div class="col-md-6">
                     <img data-aos="fade-up" data-aos-easing="ease-in" data-aos-duration="500" data-aos-delay="100" src="../static/img/gal2.jpeg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|} imageGalleryClass" alt="">
                 </div>
-            </div>
+            </div> -->
         </div>
     </section>
 
@@ -216,7 +227,9 @@
                             </div>
                         </div>
 
-                        <button class="primaryButton">Donate now</button>
+                        <a href="{{url_for("donate")}}">
+                            <button class="primaryButton">Donate now</button>
+                        </a>
 
                     </div>
                 </div>
@@ -235,9 +248,12 @@
         <h6 class="small-header">TAKE A LOOK AT OUR TEAM</h6>
         <h4 style="font-weight: bold;">We have helped over 200 vulnerable communities worldwide</h4>
         <div style="margin: auto; width: fit-content; margin-top: 30px;" class="buttonRow">
-            <button class="primaryButton">
-                Donate now
-            </button>
+            <a href="{{url_for("donate")}}">
+                <button class="primaryButton">
+                    Donate now
+                </button>
+            </a>
+
             <a href="{{url_for('statement')}}">
 
             <button class="secondaryButton">
@@ -259,7 +275,22 @@
                     <h6 style="color: blue;" data-aos="fade-in" data-aos-easing="ease-in" data-aos-duration="500"><b>FOUNDER/PRESIDENT</b></h6>
                     <h1 data-aos="fade-in" data-aos-easing="ease-in" data-aos-duration="500" data-aos-delay="100" class="support-row-header">Mr. Samuel Opoku-Kufuor</h1>
                     <hr>
-                    <p data-aos="fade-in" data-aos-easing="ease-in" data-aos-duration="500" data-aos-delay="100" class="support">Mr Samuel Opoku Kufuor is a philanthropist and a believer in the gospel. In dark times when the focus is shifting, he has made it his life purpose to bring back the bible. As a strong believer and a practicing christian, Mr Sam has other foundations where he impacts the lifes of the astray, from visiting prisons to donating to schools, he appraises God as the one who has brought him this far.  </p>
+                    <p data-aos="fade-in" data-aos-easing="ease-in" data-aos-duration="500" data-aos-delay="100" class="support">Samuel Opoku Kufuor is a philanthropist and a believer in the gospel. In these challenging times when the focus is shifting from the printed Holy Bible, he has made a life time commitment to distribute the printed Bible as widely as possible at no charge to whomever wants one. </p>
+                    <!-- <p data-aos="fade-in" data-aos-easing="ease-in" data-aos-duration="500" data-aos-delay="100" class="support">Mr Samuel Opoku Kufuor is a philanthropist and a believer in the gospel. In dark times when the focus is shifting, he has made it his life purpose to bring back the bible. As a strong believer and a practicing christian, Mr Sam has other foundations where he impacts the lifes of the astray, from visiting prisons to donating to schools, he appraises God as the one who has brought him this far.  </p> -->
+                    <br/>
+            </div>
+            </div>
+
+        <div class="row" style="margin: 100px auto;"  >
+            <div class="col-md-6">
+                <img src="../static/img/gal1.jpeg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" style="object-fit: cover; border-radius: 10px; margin-top: 10px;" alt="">
+            </div> 
+            <div class="col-md-6">
+
+                    <h6 style="color: blue;" data-aos="fade-in" data-aos-easing="ease-in" data-aos-duration="500"><b>FOUNDER/PRESIDENT</b></h6>
+                    <h1 data-aos="fade-in" data-aos-easing="ease-in" data-aos-duration="500" data-aos-delay="100" class="support-row-header">Mr. Frank Bediako</h1>
+                    <hr>
+                    <p data-aos="fade-in" data-aos-easing="ease-in" data-aos-duration="500" data-aos-delay="100" class="support">Frank Bediako is a committed Christian who passionately shares the vision of distributing the printed Bible as widely as possible to whoever may need one at no charge. He supports the vision of ETBPC with a range of resources.  </p>
                     <br/>
             </div>
             </div>

@@ -24,20 +24,49 @@ class Scripture(db.Model):
     def __repr__(self):
         return f"Scripture('{self.id}', '{self.title}')"
 
+
+class Update(db.Model):
+    tablename = ['Update']
+
+    id = db.Column(db.Integer, primary_key=True)
+    field1 = db.Column(db.String)
+    field2 = db.Column(db.String)
+    field3 = db.Column(db.String)
+    field4 = db.Column(db.String)
+    date = db.Column(db.String)
+    date_created = db.Column(db.DateTime, default=datetime.utcnow)
+    # author = db.Column(db.String)
+    # image_file = db.Column(db.String(200), default='default.png')
+    
+    def __repr__(self):
+        return f"Scripture('{self.id}', '{self.date}')"
+
 @app.route('/',methods=['GET','POST'])
 def home():
     scripture = Scripture.query.order_by(Scripture.id.desc()).first()
+    update = Update.query.order_by(Update.id.desc()).first()
     print(scripture)
-    return render_template('index.html', scripture=scripture)
+    print(update)
+    return render_template('index.html', scripture=scripture, update=update)
 
 
 @app.route('/donate')
 def donate():
     return render_template('donate.html')
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
 @app.route('/gallery')
 def gallery():
     return render_template('gallery.html')
+
+@app.route('/updates')
+def updates():
+    return render_template('updates.html')
+
+
 
 
 
@@ -51,6 +80,17 @@ def addscripture():
         flash(f'New Scripture Updated.', 'success')
         return redirect(url_for('home'))
     return render_template('addscripture.html', form=form)
+
+@app.route('/addupdate', methods=['GET','POST'])
+def addupdate():
+    form = UpdateForm()
+    if form.validate_on_submit():
+        newUpdate = Update(field1=form.field1.data, date=form.date.data, field2=form.field2.data, field3=form.field3.data, field4=form.field4.data)
+        db.session.add(newUpdate)
+        db.session.commit()
+        flash(f'New update successful.', 'success')
+        return redirect(url_for('home'))
+    return render_template('addupdate.html', form=form)
 
 @app.route('/statement')
 def statement():

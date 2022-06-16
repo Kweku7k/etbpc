@@ -21,12 +21,14 @@
   </head>
   <body class="body">
 
-    <nav class="border-bottom navbar navbar-expand-lg navbar-light navbar-fixed-top bg-white" >
+    <nav class="border-bottom navbar navbar-expand-lg navbar-light sticky-top navbar-fixed-top bg-white" >
         <a class="navbar-brand" href="{{ url_for('home') }}">
+          <div style="display: flex; align-items: center;"> 
+            <img src="../static/img/bluelogo.png" style="width: 5vw;" alt="">
             <h6 class="header" style="margin: 0; font-weight: bold; ">
-            <!-- <i class="fa fa-heart-o" aria-hidden="true"></i> -->
               ETBPC</a>
-      </h6>
+            </h6>
+          </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -37,10 +39,10 @@
             <a class="nav-link" href="#whatWeDo">What we do <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#about">About Us <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="{{url_for("about")}}">About Us <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#gallery">Gallery <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="{{url_for("gallery")}}">Gallery <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#contact">Contact Us <span class="sr-only">(current)</span></a>
@@ -88,7 +90,7 @@
                     <hr style="background-color: white;">
                     <p>Reaching the Outermost with His Word..</p>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <h5 class="small-header" style="color:white">Useful Links</h5>
 
                     <ul>
@@ -107,7 +109,7 @@
                     </ul>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-3">
 
                     <h5 class="small-header" style="color:white">Contact Us</h5>
                     <h6>PO Box CT 5845, Cantoments, Accra</h6>
