@@ -52,7 +52,7 @@ def home():
 
 @app.route('/donate')
 def donate():
-    return render_template('donate.html')
+    return redirect('https://paystack.com/pay/mv94id5n1y')
 
 @app.route('/about')
 def about():
@@ -65,10 +65,6 @@ def gallery():
 @app.route('/updates')
 def updates():
     return render_template('updates.html')
-
-
-
-
 
 @app.route('/addscripture', methods=['GET','POST'])
 def addscripture():
