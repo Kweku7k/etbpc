@@ -12,9 +12,9 @@ class ScriptureForm(FlaskForm):
 
 
 class UpdateForm(FlaskForm):
-    field1 = StringField('field1', validators=[DataRequired()])
-    field2 = StringField('field2', validators=[DataRequired()])
-    field3 = StringField('field3', validators=[DataRequired()])
-    field4 = StringField('field4', validators=[DataRequired()])
-    date = StringField('date', validators=[DataRequired()])
+    field1 = StringField('Humans Impacted', validators=[DataRequired()])
+    field2 = StringField('Collaborators', validators=[DataRequired()])
+    field3 = StringField('Donations', validators=[DataRequired()])
+    field4 = StringField('Assisted Commnunities', validators=[DataRequired()])
+    date = StringField('Date', validators=[DataRequired()])
     submit = SubmitField('New Update')

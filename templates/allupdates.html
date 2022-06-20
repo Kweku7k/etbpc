@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+
+<section style="margin-top: 100px; padding-bottom: 100px;">
+    <div class="container">
+        {% for update in updates %}
+            <h2 class="small-heading" style="text-align: center; font-weight: bold; color: blue;">{{update.date}}</h2>
+
+            <div class="row" style="border-bottom: 1px solid rgb(218, 218, 218); margin-bottom: 7vh;">
+                <div class="col-md-3 dataCard" data-aos="fade-up" data-aos-easing="ease-in" data-aos-duration="500">
+                    <h1 class="support-row-header">{{update.field1}}<span class="support-row-span">m</span></h1>
+                    <h6 class="support">Humans impacted</h6>
+                </div>
+                <div class="col-md-3 dataCard" data-aos="fade-up" data-aos-easing="ease-in" data-aos-duration="500" data-aos-delay="100">
+                    <h1 class="support-row-header">{{update.field2}}<span class="support-row-span">k</span></h1>
+                    <h6 class="support">Collaborators</h6>
+                </div>
+                <div class="col-md-3 dataCard" data-aos="fade-up" data-aos-easing="ease-in" data-aos-duration="500" data-aos-delay="200">
+                    <h1 class="support-row-header">{{update.field3}}<span class="support-row-span">k</span></h1>
+                    <h6 class="support">Donations</h6>
+                </div>
+                <div class="col-md-3 dataCard" data-aos="fade-up" data-aos-easing="ease-in" data-aos-duration="500" data-aos-delay="300">
+                    <h1 class="support-row-header">{{update.field4}}<span class="support-row-span">+</span></h1>
+                    <h6 class="support">Assisted communities</h6>
+                </div>
+                
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

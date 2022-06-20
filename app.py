@@ -66,6 +66,11 @@ def gallery():
 def updates():
     return render_template('updates.html')
 
+@app.route('/allupdates')
+def allupdates():
+    updates = Update.query.all()
+    return render_template('allupdates.html', updates=updates)
+
 @app.route('/addscripture', methods=['GET','POST'])
 def addscripture():
     form = ScriptureForm()

@@ -188,6 +188,10 @@ section{
     margin-bottom: 0;
 }
 
+.form-group{
+    text-align: left;
+}
+
 
 @media only screen and (max-width: 768px) {
     /* For mobile phones: */
