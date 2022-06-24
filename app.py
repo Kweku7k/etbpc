@@ -53,7 +53,8 @@ def home():
 @app.route('/donate')
 def donate():
     # return redirect('https://paystack.com/pay/mv94id5n1y')
-    return redirect('https://flutterwave.com/donate/9xn5chvled9b')
+    # return redirect('https://flutterwave.com/donate/9xn5chvled9b')
+    return redirect('https://flutterwave.com/pay/etbpc?_gl=1%2a1f9j092%2a_ga%2aMTQ2NDIxMDAzMS4xNjU1NzU5NDU3%2a_ga_KQ9NSEMFCF%2aMTY1NjA2NzQxNy4zLjEuMTY1NjA2ODEyMy4w')
 
 @app.route('/about')
 def about():
