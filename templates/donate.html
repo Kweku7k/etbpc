@@ -50,7 +50,7 @@
             </div>
           </li> -->
         </ul>
-          <button class="primaryButton" type="submit">Donate now</button>
+          <button class="primaryButton" type="submit" >Donate now</button>
       </div>
     </nav>
     <!-- {% block body %} -->
@@ -71,7 +71,7 @@
                         </a>
                     </h6>
                     <div class="buttonRow-middle" style="margin: auto;">
-                        <button data-aos="fade-up" data-aos-easing="ease-in" data-aos-duration="500" class="primaryButton">Custom Amount Donation</button>
+                        <button data-aos="fade-up" data-aos-easing="ease-in" data-aos-duration="500" class="primaryButton" data-toggle="modal" data-target="#exampleModal">Custom Amount Donation</button>
                     </div>
                 </div>
                 <div class="col-md-3"></div>
@@ -142,6 +142,49 @@
                 </div>
             </div>
         </div>
+
+        <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary">
+    Launch demo modal
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <form action="" method="post" >
+        {{ form.hidden_tag() }}
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel" style="color: black;">Custom Amount Donation</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h6>How much would you like to donate</h6>
+
+          <div class="form-group">
+            {{form.email (class="form-contron")}}
+            <input type="email" class="form-control" name="" id="" aria-describedby="emailHelpId" placeholder="">
+            <small id="emailHelpId" class="form-text text-muted">Help text</small>
+          </div>
+
+<div>
+  {{form.email}}
+</div>
+          {{form.currency}}
+          {{form.amount}}
+          <!-- <button type="submit" class="primaryButton">Donate</button> -->
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Donate</button>
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
        
     </footer>
 

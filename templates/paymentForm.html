@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+    
+
+{% block body %}
+    <section class="primarySection">
+        <div class="container">
+            <div class="row" style="text-align: center;">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+
+                    <h1 data-aos="fade-in" data-aos-easing="ease-in" data-aos-duration="500" class="heading" style="font-family: 'Poppins', sans-serif;">Donate to the EndTime Bible Project</h1>
+                    <h6 class="text-muted">We appreciate you taking your time to donate to our endtime bible project. Please give hceerfully/</h6>
+                    <hr class="header-line-middle">
+
+                    <form action="" method="post" enctype="multipart/form-data" >
+                      {{ form.hidden_tag() }}
+
+                      <div class="form-group">
+                        <!-- {{ form.email.label }} -->
+                        {{ form.name (class="form-control", placeholder= "Your name") }}
+                    </div>
+                      <div class="form-group">
+                        <!-- {{ form.email.label }} -->
+                        {{ form.email (class="form-control", placeholder= "Your email address") }}
+                    </div>
+                    <div class="row">
+                      <div class="col-md-2">
+                        <div class="form-group">
+                          <!-- {{ form.currency.label }} -->
+                          {{ form.currency (class="form-control") }}
+                      </div>
+                      </div>
+                      <div class="col-md-10">
+                        <div class="form-group">
+                          <!-- {{ form.amount.label }} -->
+                          {{ form.amount (class="form-control", row=50, placeholder= "Donation Amount") }}
+                        </div>
+                      </div>
+                    </div>
+                      <!-- <div class="form-group">
+                        {{ form.amount.label }}
+                        {{ form.amount (class="form-control", placeholder= "Scripture amount") }}
+                        <small id="helpId" class="text-muted">Pick the amount of the scripture readng from <a href="https://www.bible.com/bible/1/2CO.9.KJV">Bible.com</a></small>
+
+                    </div> -->
+
+                    <div data-aos="fade-up" data-aos-easing="ease-in" data-aos-duration="500" >
+                      {{form.submit (class="primaryButton")}}
+                  </div>
+
+                    </form> 
+
+                    <!-- <form action="">
+                        <div class="form-group">
+                          <label for=""></label>
+                          <input type="text" name="" placeholder="Scripture Title" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                          <small id="helpId" style="text-align: left;" class="text-muted">eg. John 1:1</small>
+                        </div>
+
+
+                          <div class="form-group">
+                            <label for=""></label>
+                            <textarea class="form-control" placeholder="Scripture Scripture Content" name="" id="" rows="3"></textarea>
+                          </div>
+
+                          <div class="form-group">
+                            <label for=""></label>
+                            <input type="text" name="" placeholder="Scripture link" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                            <small id="helpId" class="text-muted">Pick the link of the scripture readng from <a href="https://www.bible.com/bible/1/2CO.9.KJV">Bible.com</a></small>
+                          </div>
+                    </form> -->
+                    <!-- <div class="buttonRow-middle" style="margin: auto;">
+                        <button data-aos="fade-up" data-aos-easing="ease-in" data-aos-duration="500" class="primaryButton">Upload New Scripture Reading</button>
+                    </div> -->
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+
+        </div>
+    </section>
+
+
+    {% endblock %}

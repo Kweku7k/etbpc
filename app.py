@@ -2,6 +2,8 @@ from flask import Flask, flash,redirect,url_for,render_template,request
 from flask_sqlalchemy import SQLAlchemy
 from forms import *
 from datetime import datetime
+import requests
+import json
 
 app=Flask(__name__)
 db = SQLAlchemy(app)
@@ -50,11 +52,55 @@ def home():
     return render_template('index.html', scripture=scripture, update=update)
 
 
-@app.route('/donate')
+def payWithPaystack(email, amount, currency):
+    if currency == 'GHS':
+        data ={ "email": email, "amount": amount, "channels":['card','bank', 'mobile_money'], "subaccount":'ACCT_jttrnvrmw7w2a4z' }
+    else:
+        data ={ "email": email, "amount": amount, "channels":['card','bank'], "subaccount":'ACCT_jttrnvrmw7w2a4z' }
+        
+    url = 'https://api.paystack.co/transaction/initialize'
+    headers = {
+        "Authorization": "Bearer sk_live_2cd142483915bea9a7602d4c6de8b546151fad6b",
+        "Content-Type": "application/json",
+    }
+
+    response = requests.post(url, data=json.dumps(data), headers=headers)
+    thisdict = json.loads(response.text)
+    print(thisdict)
+    authorizationUrl = thisdict['data']['authorization_url']
+    print(authorizationUrl)
+    return authorizationUrl
+
+
+@app.route('/donate', methods=['POST','GET'])
 def donate():
-    # return redirect('https://paystack.com/pay/mv94id5n1y')
+    form = ConvertCurrency()
+    if form.validate_on_submit():
+        print("validated")
+        amount = form.amount.data
+        currency = form.currency.data
+        email = form.email.data
+        result = convertCurrency(currency, amount)
+        print(result)
+        result = json.loads(result)['result']
+        print(result)
+        rounded = int(round(result, 2)*100)
+        print("rounded = " + str(rounded))
+        # print("round")
+        # print(round(result, 2))
+        # roundedAmount = float(round(result, 2))
+        # print("rounded amount " + str(roundedAmount))
+        # print(roundedAmount * 100)
+        authUrl = payWithPaystack(email, rounded, currency)
+        print(authUrl)
+        return redirect(authUrl)
+        # return redirect('https://paystack.com/pay/mv94id5n1y')
+    else:
+        print(form.errors)
+        # flash(f'There was a problem','danger')
+    return render_template('paymentForm.html', form=form)
     # return redirect('https://flutterwave.com/donate/9xn5chvled9b')
-    return redirect('https://flutterwave.com/pay/etbpc?_gl=1%2a1f9j092%2a_ga%2aMTQ2NDIxMDAzMS4xNjU1NzU5NDU3%2a_ga_KQ9NSEMFCF%2aMTY1NjA2NzQxNy4zLjEuMTY1NjA2ODEyMy4w')
+    # return redirect('https://flutterwave.com/pay/etbpc?_gl=1%2a1f9j092%2a_ga%2aMTQ2NDIxMDAzMS4xNjU1NzU5NDU3%2a_ga_KQ9NSEMFCF%2aMTY1NjA2NzQxNy4zLjEuMTY1NjA2ODEyMy4w')
 
 @app.route('/about')
 def about():
@@ -63,6 +109,23 @@ def about():
 @app.route('/gallery')
 def gallery():
     return render_template('gallery.html')
+
+
+def convertCurrency(currency, amount):
+    url = "https://api.apilayer.com/currency_data/convert?to=GHS&from="+ currency +"&amount="+ amount 
+
+    payload = {}
+    headers= {
+    # "apikey": "KggjPZDWQHGB8eHxmWefEkeH1JiKUogx"
+    "apikey": "1hJTCcWfCNngk1XilsuU5wE6jBen6wtM"
+    }
+
+    response = requests.request("GET", url, headers=headers, data = payload)
+
+    status_code = response.status_code
+    print(status_code)
+    result = response.text
+    return result
 
 @app.route('/updates')
 def updates():
