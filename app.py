@@ -54,9 +54,9 @@ def home():
 
 def payWithPaystack(email, amount, currency):
     if currency == 'GHS':
-        data ={ "email": email, "amount": amount, "channels":['card','bank', 'mobile_money'], "subaccount":'ACCT_jttrnvrmw7w2a4z' }
+        data ={ "email": email, "amount": amount, "subaccount":'ACCT_jttrnvrmw7w2a4z', "callback_url":"https://etbpc.com/thanks", "channels":['card','bank', 'mobile_money'] }
     else:
-        data ={ "email": email, "amount": amount, "channels":['card','bank'], "subaccount":'ACCT_jttrnvrmw7w2a4z' }
+        data ={ "email": email, "amount": amount, "subaccount":'ACCT_jttrnvrmw7w2a4z', "callback_url":"https://etbpc.com/thanks", "channels":['card','bank'] }
         
     url = 'https://api.paystack.co/transaction/initialize'
     headers = {
@@ -101,6 +101,14 @@ def donate():
     return render_template('paymentForm.html', form=form)
     # return redirect('https://flutterwave.com/donate/9xn5chvled9b')
     # return redirect('https://flutterwave.com/pay/etbpc?_gl=1%2a1f9j092%2a_ga%2aMTQ2NDIxMDAzMS4xNjU1NzU5NDU3%2a_ga_KQ9NSEMFCF%2aMTY1NjA2NzQxNy4zLjEuMTY1NjA2ODEyMy4w')
+
+@app.route('/donated')
+def donated():
+    return render_template('donated.html')
+    
+@app.route('/thanks', methods=['GET', 'POST'])
+def thanks():
+    return render_template('thanks.html')
 
 @app.route('/about')
 def about():
