@@ -132,23 +132,23 @@ background-image: url('../static/img/bibless.png'); object-fit: cover; height: 1
 
     <section style="margin-top: 100px; padding-bottom: 100px;">
         <div class="container">
-        <h2 class="small-heading" style="text-align: center; font-weight: bold; color: blue;">{{update.date}}</h2>
+        <h2 class="small-heading" style="text-align: center; font-weight: bold; color: blue;" id="month"></h2>
 
             <div class="row">
                 <div class="col-md-3 dataCard" data-aos="fade-up" data-aos-easing="ease-in" data-aos-duration="500">
-                    <h1 class="support-row-header">{{update.field1}}<span class="support-row-span">m</span></h1>
+                    <h1 class="support-row-header" id="peopleContributed"><span class="support-row-span">m</span></h1>
                     <h6 class="support">People Contributed</h6>
                 </div>
                 <div class="col-md-3 dataCard" data-aos="fade-up" data-aos-easing="ease-in" data-aos-duration="500" data-aos-delay="100">
-                    <h1 class="support-row-header">{{update.field2}}<span class="support-row-span">k</span></h1>
+                    <h1 class="support-row-header" id="moneyAccrued">{{update.field2}}<span class="support-row-span">k</span></h1>
                     <h6 class="support">Money Accrued</h6>
                 </div>
                 <div class="col-md-3 dataCard" data-aos="fade-up" data-aos-easing="ease-in" data-aos-duration="500" data-aos-delay="200">
-                    <h1 class="support-row-header">{{update.field3}}<span class="support-row-span">k</span></h1>
+                    <h1 class="support-row-header" id="biblesBought">{{update.field3}}<span class="support-row-span">k</span></h1>
                     <h6 class="support">Bibles Bought</h6>
                 </div>
                 <div class="col-md-3 dataCard" data-aos="fade-up" data-aos-easing="ease-in" data-aos-duration="500" data-aos-delay="300">
-                    <h1 class="support-row-header">{{update.field4}}<span class="support-row-span">+</span></h1>
+                    <h1 class="support-row-header" id="biblesDistributed">{{update.field4}}<span class="support-row-span">+</span></h1>
                     <h6 class="support">Bibles Distributed</h6>
                 </div>
                 
@@ -162,10 +162,8 @@ background-image: url('../static/img/bibless.png'); object-fit: cover; height: 1
             <div class="row">
                 <div class="col">
                     <h6 class="small-header">Bible quote for the day.</h6>
-                    <h1 class="header" style="font-weight: bold;">{{scripture.title}}</h1>
-                    <h6 >
-                        {{scripture.content}}
-                    </h6>
+                    <h1 class="header" style="font-weight: bold;" id="scriptureTitle">{{scripture.title}}</h1>
+                    <h6 id="scripture"></h6>
                     <br/>
                     <a href={{scripture.link}}>
                         <button class="primaryButton">Read More</button>
@@ -519,6 +517,41 @@ background-image: url('../static/img/bibless.png'); object-fit: cover; height: 1
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init();
+    </script>
+    <script>
+
+        const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+        const d = new Date();
+        let monthName = month[d.getMonth()];
+
+    //    const month = new Date().getMonth()
+       document.getElementById("month").innerText = monthName
+       document.getElementById("peopleContributed").innerText = 0
+       document.getElementById("moneyAccrued").innerText = 0
+       document.getElementById("biblesBought").innerText = 0
+       document.getElementById("biblesDistributed").innerText = 0
+
+    </script>
+
+    <script>
+        let file = "https://beta.ourmanna.com/api/v1/get?format=json&order=daily"
+        fetch (file)
+        .then(response => response.json())
+        .then(data => updateScripture(data))
+        .then(y => document.getElementById("scripture").innerHTML = y);
+    
+        function updateScripture(data){
+            console.log("DATA")
+            console.log(data)
+            title = data.verse.details.reference
+            scripture = data.verse.details.text
+            console.log(title)
+            console.log(scripture)
+            document.getElementById("scripture").innerText = scripture
+            document.getElementById("scriptureTitle").innerHTML = title
+
+
+        }
     </script>
   </body>
 </html>
