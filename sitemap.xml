@@ -1,17 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
 
+<!-- This XML file does not appear to have any style information associated with it. The document tree is shown below. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!--  created with Free Online Sitemap Generator www.xml-sitemaps.com  -->
 <url>
   <loc>https://etbpc.com/</loc>
-  <lastmod>2023-04-28T19:27:49+00:00</lastmod>
+  <lastmod>2023-05-19T10:55:28+00:00</lastmod>
   <priority>1.00</priority>
 </url>
-
-
+<url>
+  <loc>https://etbpc.com/about.html</loc>
+  <lastmod>2023-05-19T10:55:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://etbpc.com/gallery.html</loc>
+  <lastmod>2023-05-19T10:55:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://etbpc.com/statement.html</loc>
+  <lastmod>2023-05-19T10:55:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://etbpc.com/index.html</loc>
+  <lastmod>2023-05-19T10:55:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
 </urlset>
